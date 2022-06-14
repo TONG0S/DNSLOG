@@ -19,7 +19,7 @@
 
 ```
 python3
-Django3
+Django3==3.2.9
 pymysql
 
 pip install requirements.txt 
@@ -50,7 +50,14 @@ Dnslog_web/dnslog_/config.json
 
 ### 3、运行脚本
 
-1、抓本地53端口,获取信息并传到数据库
+1、添加数据库
+```
+python create.py
+```
+需要手动添加用户名密码
+
+
+2、抓本地53端口,获取信息并传到数据库
 
 ```
 python3 dnslog.py
@@ -58,7 +65,7 @@ python3 dnslog.py
 
 
 
-2、运行web界面，显示信息
+3、运行web界面，显示信息
 
 ```
 python3 manage.py runserver IP:PORT
