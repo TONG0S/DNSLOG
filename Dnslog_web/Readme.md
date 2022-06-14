@@ -52,7 +52,7 @@ Dnslog_web/dnslog_/config.json
 
 1、添加数据库
 ```
-python create.py
+python create_db.py
 ```
 需要手动添加用户名密码
 
