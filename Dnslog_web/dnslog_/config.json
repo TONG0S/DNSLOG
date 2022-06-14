@@ -1,0 +1,16 @@
+{
+  "info": {
+    "NS0.XXX.ml": "1.1.1.1",
+    "NS1.XXX.ml": "1.1.1.1",
+    "*": "1.1.1.1"
+  },
+  "domain": "YYY.tk,VPS绑定的域名",
+  "database":{
+	  "user":"root",
+	  "password":"123456",
+	  "host":"127.0.0.1",
+	  "port":3306,
+	  "db":"dnslog",
+      "default_name": "NAME"
+  }
+}
