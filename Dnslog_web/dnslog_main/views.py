@@ -89,7 +89,7 @@ def main(requests):
     username_=get_username(ret)
 
     if requests.method == "POST":
-        # print(dict(requests.POST))
+
         req = dict(requests.POST)
         if 'new_domain' in req:
             conf_path = os.path.join(BASE_DIR, 'dnslog_', 'config.json')
@@ -107,7 +107,6 @@ def main(requests):
         # else:
         elif 'new_A' in req:
             new_domain = new_domain
-            # new_domain = "eck2xxX1h.zweather.tk"
             sql = 'select src,domain,createtime from dnsquery where domain like "%{}"'.format(new_domain)
             data = conn(sql)
 
@@ -120,7 +119,6 @@ def main(requests):
             
     if username_:
 
-        # new_domain = "eck2xxX1h.zweather.tk"
         sql = 'select src,domain,createtime from dnsquery where domain like "%{}"'.format(new_domain)
         data = conn(sql)
 
@@ -147,7 +145,7 @@ def index(requests):
             rep=render(requests, "index.html")  # 自动去templates目录下查找，setting配置文件中
             value=str(create_cookie(username_))
             rep.set_signed_cookie("is_login", value, salt="ban")
-            # rep.set_signed_cookie("is_login", value, salt="ban", max_age=100)
+
             return rep
 
         return render(requests, "login.html", {"error": "账户密码错误"})
