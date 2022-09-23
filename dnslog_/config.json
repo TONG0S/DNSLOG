@@ -1,0 +1,16 @@
+{
+  "info": {
+    "NS0.free.ml": "VPS IP",
+    "NS1.free.ml": "VPS IP",
+    "*": "VPS IP"
+  },
+  "domain": "DNS域名",
+  "database":{
+	  "user":"用户名",
+	  "password":"密码",
+	  "host":"host",
+	  "port":3306,
+	  "db":"database",
+      "default_name": "default user name"
+  }
+}

