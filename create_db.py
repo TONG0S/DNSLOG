@@ -12,6 +12,8 @@ user = database_["user"]  # 用户名
 password = database_["password"]  # 密码
 host = database_["host"]  # 连接名称
 port = database_["port"]  # port需要是int类型
+default_name = database_["default_name"]  # port需要是int类型
+default_passwd = database_["default_passwd"]  # port需要是int类型
 db = database_["db"]  # 数据库
 print(config)
 conn = pymysql.connect(host=host, port=port, user=user, password=password)
@@ -30,6 +32,11 @@ cursor.execute(sql)  # 执行SQL语句
 
 conn.commit()
 sql='''create table user( user char(255),passwd char(255))'''
+cursor.execute(sql)  # 执行SQL语句
+
+
+conn.commit()
+sql=f'''insert into user(user,passwd) value ("{default_name}","{default_passwd}");'''
 cursor.execute(sql)  # 执行SQL语句
 
 conn.commit()
