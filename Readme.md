@@ -62,6 +62,10 @@ python3 dnslog.py
 
 ```
 python3 manage.py runserver IP:PORT
+
+or
+
+python3 manage.py runserver 0.0.0.0:PORT
 ```
 
 
@@ -83,8 +87,8 @@ nohup python3 manage.py runserver IP:PORT >web.log 2>&1 &
 
 ### 1、53端口被占用
 
-​	查看进程关闭当前服务
+​	查看进程关闭当前服务[systemctl stop systemd-resolved]
 
 ### 2、django无法安装
 
-​	查看ping域名是否能ping通，添加dns地址
+​	查看ping域名是否能ping通，添加dns地址[systemctl start systemd-resolved]
