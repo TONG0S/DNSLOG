@@ -11,6 +11,7 @@
 	  "host":"host",
 	  "port":3306,
 	  "db":"database",
-      "default_name": "default user name"
+      "default_name": "default user name",
+      "default_passwd": "default user name"
   }
 }
